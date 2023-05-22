@@ -11,11 +11,34 @@ Create a linux machine in AWS cloud
 	c. Create and save the Key Pair to login 
 4. Create instance 
 
-
+In linux command are casesensitive 
 
 folder is called as Directory 
 
-Create 
+Know your current path/location 
+    pwd - present working directory 
+
+To list files and directories 
+     command: ls 
+     To list with details (long format): ls -l
+     To list with creation time sorted (recent at top): ls -t
+     To list reverse order: ls -r
+     All the above together: ls -lrt (OR) ll
+       
+switch/change to a folder/Directory in linux (change directory - cd)
+    command: cd  
+    Syntax: cd <path>/<location>
+    example: 1. To change to a Directory in current location
+    		cd test 
+
+create a directory/folder in linux (make directory - mkdir)
+    command: mkdir 
+    To create a directory: mkdir <directory_name>
+    		example: mkdir test
+    To create multiple directories: mkdir <directory_name> <directory_name1> <directory_name2> ..... <directory_name>
+    		note: directory names with space seperated	
+    		example: mkdir test test1 test2 ....		
+    
 rename 
 put some file in it 
 copy folder to different location 
