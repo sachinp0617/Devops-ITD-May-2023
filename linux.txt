@@ -1,0 +1,29 @@
+In linux 
+To practice - (install git or MobaXterm)
+
+Create a linux machine in AWS cloud 
+
+1. Create a AWS account 
+2. wait for the account to get activated 
+3. Search for EC2 service -> Goto Instances -> Launch Instances 
+	a. Give a name to the machine (instance)
+	b. Choose the OS type (AMI type)
+	c. Create and save the Key Pair to login 
+4. Create instance 
+
+
+
+folder is called as Directory 
+
+Create 
+rename 
+put some file in it 
+copy folder to different location 
+delete a folder 
+permissions 
+check the details of folder 
+
+
+
+
+
