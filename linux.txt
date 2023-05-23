@@ -39,14 +39,34 @@ create a directory/folder in linux (make directory - mkdir)
     		note: directory names with space seperated	
     		example: mkdir test test1 test2 ....		
     
-rename 
-put some file in it 
-copy folder to different location 
-delete a folder 
-permissions 
-check the details of folder 
+rename or move the file from one location to another (mv)
+	- mv command to move files and directory through the command line. 
+	- We can also use the mv command to rename a file/directory.
+	To rename a file/directory
+		mv old_filename new_filename
+		mv old_directory new_directory
+	To move to a different location (cut and paste)	
+		mv <source> <destination>
+	
+Delete files/directories (rm)
 
+Use the rm command to delete files and directories. But rm cannot simply delete a directory. Use “rm -r” to delete a directory. In this case, it deletes both the folder and the files in it.
+     To remove/delete a file 	
+	rm file_name 
+     To remove/delete a Directory	
+	rm -r directory
 
+Linux path 
+  Always linux path is seperate with / 	
+   . -> current directory 
+   .. -> one step back / Previous one directory 
+   ../.. -> Previous two directory
 
-
-
+To create a empty file (touch)
+    if file does not exists, touch command will creates empty file.
+    If file already exists, touch command will alter the file timestamp to recent.
+	touch <file_name>
+To display/print tje contents of files (cat)
+	cat command (short for “concatenate“) allows us to create single or multiple files, view contain
+	of file, concatenate files and redirect output in terminal or files.
+		cat <file_name>
