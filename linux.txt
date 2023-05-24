@@ -71,10 +71,42 @@ To display/print tje contents of files (cat)
 	of file, concatenate files and redirect output in terminal or files.
 		cat <file_name>
 
+
 To install tree command execute the below 2 command seperately 
     1. sudo apt update
     2. sudo apt install tree 
+
+
+Vi Editor 
+
+	Command Mode  
+		- we can't add any content. This is used to run vi related commands. 
+		- Initialy when we do vi to a file command mode is the default mode.
 	
+		Only Save the changes to the file -  ':w'
+		To quit from vi - ':q!'
+		Save and quit from vi - ':wq!' or (<escape> - Hold shift + zz)
+		Save to another file - ':w <new_file>'
+
+		To search a word - '/<word>'
+
+		To display line numbers - ':set nu'
+
+		To replace word - s/<old_word>/<new_word>/g
+
+		To display line numbers - ':nu'
+
+		dd - cut the entire line where the cursor is 
+		yy - copy the entire line where the cursor is 
+		p - paste the clip-borad content next to the cursor 
+
+	
+	Insert Mode 
+		- Is used add the content to the file.
+ 		- Press 'i' to enter to insert mode 
+ 		- Press '<escape>' to exit insert mode and move to command mode.
+
+
 chmod 
    (Chart I added as image in the same repo)
    - chmod command is used to change the access mode of a file. 
@@ -87,7 +119,4 @@ chmod
 	    2. Read, write to file owner, Read to groups and Wrtie, Execute to Others: 
    			chmod u+rw, g+r, o+wx <file_name>	
 				(OR)
-			chmod 643 <file_name>		
-	   
-	   
-		
+			chmod 643 <file_name>
