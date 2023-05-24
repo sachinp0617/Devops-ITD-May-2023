@@ -70,3 +70,24 @@ To display/print tje contents of files (cat)
 	cat command (short for “concatenate“) allows us to create single or multiple files, view contain
 	of file, concatenate files and redirect output in terminal or files.
 		cat <file_name>
+
+To install tree command execute the below 2 command seperately 
+    1. sudo apt update
+    2. sudo apt install tree 
+	
+chmod 
+   (Chart I added as image in the same repo)
+   - chmod command is used to change the access mode of a file. 
+   - The name is an abbreviation of change mode. 
+
+   example: 1. Read, write and execute permissions to the file owner: 
+   			chmod u+rwx <file_name>	
+				(OR)
+			chmod 700 <file_name>		
+	    2. Read, write to file owner, Read to groups and Wrtie, Execute to Others: 
+   			chmod u+rw, g+r, o+wx <file_name>	
+				(OR)
+			chmod 643 <file_name>		
+	   
+	   
+		
