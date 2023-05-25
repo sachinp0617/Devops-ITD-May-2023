@@ -120,3 +120,59 @@ chmod
    			chmod u+rw, g+r, o+wx <file_name>	
 				(OR)
 			chmod 643 <file_name>
+
+tail 
+tail -n n file.txt The tail command, as the name implies, print the last N number of lines
+of the given input. By default, it prints the first 10 lines of the specified files.
+	# Prints last 5 line of file.txt
+		tail -n 5 file.txt (or) tail -5 file.txt 
+
+find
+	find command can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other commands can be executed on files or folders found.
+	
+SYNTAX: find <location_to_find> [options]
+
+1) Searcha file with specific name -> 
+	find . -name file.txt
+3) Searcha file with specific name with ignorecase -> 
+	find . -iname file.txt
+2) searcha files in multiple directories -> 
+	find . /home /user -name file.txt
+4) Search only files containing name -> 
+	find . -type f -iname file.txt
+5) Search only directories containing name -> 
+	find . -type d -iname file.txt
+6) Search for empty files and directories -> 
+	find . -empty
+7) Search for file with permissions(655) -> 
+	find . -perm 655
+8) Search text within multiple files. 
+	find./-typef-name"*.txt"-execgrep'search_string' {}\;
+9) find files by last modification time -> 
+	find . -mtime days
+	# 24 hours -> find . -mtime 1
+	# modified less than 7 days (7 days to till) -> find . -mtime -7
+	# Last 50-100 Days Modified Files -> find . -mtime +50 –mtime -100 
+10) Find Last 50 Days Accessed Files -> find . -atime 50
+11) Find Changed Files in Last 1 Hour -> find / -mmin -60
+12) Find Accessed Files in Last 1 Hour -> find / -amin -60
+
+grep
+‘global search for the regular expression’: The grep command is a filter that is used to search for lines
+matching a specified pattern and print the matching lines to standard output.
+
+1) Match all lines that start with‘hello’.E.g:“hellothere” -> 
+	grep “^hello” file1
+2) Match all lines that end with‘done’.E.g:“welldone” -> 
+	grep “done$” file1
+3) Match all lines that contain any of the letters‘a’,‘b’,‘c’,‘d’or‘e’ -> 
+	grep “[a-e]” file1
+4) Match all lines that do not contain a vowel -> 
+	grep “[^aeiou]” file1
+5) Match all lines that start with a digit following zero or more spaces. E.g:“1.”or“2.” -> 
+	grep “ *[0-9]” file1
+6) Searching in all files recursively using -> 
+	grep-r grep -r "ramesh" *
+7) Search multiple patterns -> 
+	grep -v -e "pattern" -e "pattern"
+
