@@ -175,4 +175,73 @@ matching a specified pattern and print the matching lines to standard output.
 	grep-r grep -r "ramesh" *
 7) Search multiple patterns -> 
 	grep -v -e "pattern" -e "pattern"
+	
+sed
+SED command in UNIX is stands for stream editor and it can perform lots of function on file like, searching, find and replace, insertion or deletion. 
 
+Consider the following text file as the input file for all cases below. (file.txt)
+
+unix is great os. unix is opensource. unix is free os.
+learn operating system.
+unix linux which one you choose.
+unix is easy to learn.unix is a multiuser os.Learn unix .unix is a powerful.
+
+1) Replacing or substituting string 
+	sed 's/unix/linux/' file.txt
+2) Replacing the nth occurrence of a pattern in a line 
+	sed 's/unix/linux/2' file.txt
+3) Replacing all the occurrence of the pattern in a line 
+	sed 's/unix/linux/g' file.txt
+4) Replacing from nth occurrence to all occurrences in a line 
+	sed 's/unix/linux/3g' file.txt
+5) Replacing string on a specific line number 
+	sed '3 s/unix/linux/' file.txt
+6) Printing only the replaced lines 
+	sed -n 's/unix/linux/p' file.txt
+7) Deleting lines from a particular file
+	To Delete a particular line, say 5 in this example
+		sed '5d' file.txt
+ 	To Delete a last line
+		sed '$d' file.txt
+	To Delete line from range x to y
+		sed '3,6d' file.txt
+	To Delete from nth to last line
+		sed '12,$d' file.txt
+	To Delete pattern matching line
+		sed '/pattern/d' file.txt
+8) Print specific line from a file 
+	sed -n '2p' file.txt
+
+CUT
+The cut command in UNIX is a command for cutting out the sections column with using delimiter from each line of files and writing the result to standard output.
+	cut -d "delimiter" -f (field number) file.txt
+1) To cut the data with “ “ (space) as delimiter and print first column data
+	cut -d " " -f 1 state.txt
+2) To cut the data with “ “ (space) as delimiter and print first to fourth column data
+	cut -d " " -f 1-4 state.txt
+
+awk
+
+The awk command in UNIX is a command for cutting out the sections column with using field separator from each line of files and writing the result to standard output.
+
+Consider the following text file as the input file for all cases below.
+$cat > employee.txt
+ajay manager account 45000 
+sunil clerk account 25000 
+varun manager sales 50000 
+amit manager account 47000
+
+1) Default behavior of Awk: By default Awk prints every line of data from the space separated field of file.
+	awk '{print $1}' employee.txt
+		    (or)
+	awk -f “ “ ‘{print $1}’ employee.txt
+
+2) To print the last column of a file using NF – Number of Fields/Columns
+	How to get the last word from a line in file.
+		awk  ‘{print $NF}’ employee.txt
+
+date
+- date command is used to display the system date and time.
+- date command is also used to set date and time of the system. 
+- By default the date command displays the date in the time zone on which unix/linux operating system is configured. 
+- You must be the super-user (root) to change the date and time.
