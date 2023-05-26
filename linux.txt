@@ -245,3 +245,20 @@ date
 - date command is also used to set date and time of the system. 
 - By default the date command displays the date in the time zone on which unix/linux operating system is configured. 
 - You must be the super-user (root) to change the date and time.
+
+a) Date and time of 2 years ago.	date --date="2 year ago"	Wed May 26 12:01:31 UTC 2021
+b) Date and time of 5 seconds ago.	date --date="5 sec ago"		Fri May 26 12:01:37 UTC 2023
+c) Date and time of previous day.	date --date="yesterday"		Thu May 25 12:01:51 UTC 2023
+d) Date and time of 2 months ago.	date --date="2 month ago"	Sun Mar 26 12:02:00 UTC 2023
+e) Date and time of 10 days ago.	date --date="10 day ago"	Tue May 16 12:02:10 UTC 2023
+a) Upcoming particular week day.	date --date="next tue"		Tue May 30 00:00:00 UTC 2023
+b) Date and time after two days.	date --date="2 day"		Sun May 28 12:03:03 UTC 2023
+c) Date and time of next day.		date --date="tomorrow"		Sat May 27 12:03:11 UTC 2023
+d) After 1 year on the current day.	date --date="1 year"		Sun May 26 12:03:20 UTC 2024
+
+Formating 
+date "+%D"		05/26/23
+date "+%D %T"		05/26/23 05:49:30
+date "+%Y-%m-%d"	2023-05-26
+date "+%Y/%m/%d"	2023/05/26
+date "+%A %B %d %T %y"	Friday May 26 05:49:30 23
