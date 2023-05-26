@@ -262,3 +262,64 @@ date "+%D %T"		05/26/23 05:49:30
 date "+%Y-%m-%d"	2023-05-26
 date "+%Y/%m/%d"	2023/05/26
 date "+%A %B %d %T %y"	Friday May 26 05:49:30 23
+
+basename  
+- Returns trailing name component of path
+   basename /user/ubuntu/linux/file.txt 
+   	output: file.txt
+dirname  
+- Returns prefixed path of the component
+   dirname /user/ubuntu/linux/file.txt 
+   	output: /user/ubuntu/linux
+	
+
+Crontab (Job Scheduler)
+The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. Crontab stands for “cron table, ” because it uses the job scheduler cron to execute tasks; cron itself is named after “chronos, ” the Greek word for time.cron is the system process which will automatically perform tasks for you according to a set schedule. The schedule is called the crontab, which is also the name of the program used to edit that schedule.
+
+Linux Crontab Format:	*	*	*	*	*	command to execute
+
+		       MIN    HOUR     DOM     MON     DOW	       CMD
+
+FIELD	DESCRIPTION	ALLOWED VALUE
+MIN	Minute field	0 to 59
+HOUR	Hour field	0 to 23
+DOM	Day of Month	1-31
+MON	Month field	1-12
+DOW	Day Of Week	0-6
+CMD	Command	Any command to be executed.
+
+To view the Crontab entries: crontab -l
+To edit Crontab Entries: crontab -e
+To edit crontab entries of other Linux users: crontab -u username -e
+
+example
+1) To schedule a job for every minute using Cron
+	* * * * * command/script
+2) How to Execute a Linux Cron Jobs Every Second Using Crontab.
+	You cannot schedule an every-second cronjob. Because in cron the minimum unit you can specify is minute. 
+3) To schedule a background Cron job for every 10 minutes.
+	*/10 * * * * /home/maverick/check-disk-space
+4) Schedule a Job for More Than One Instance (e.g. Twice a Day)
+	executes the specified script at 11:00 and 16:00 on every day
+	00 11,16 * * * /home/ramesh/bin/incremental-backup
+5) Schedule a Job for Specific Range of Time (e.g. Only on Weekdays)
+	This example checks the status of the database everyday (including weekends) during the working hours 9 a.m – 6 p.m
+	00 09-18 * * * /home/ramesh/bin/check-db-status
+6) Cron job to run on the last day of the month
+	55 23 28-31 * * [[ "$(date --date=tomorrow +\%d)" == "01" ]] && myscript.sh 0 23 28-31 * * [ $(date -d +1day +%d) -eq 1 ] && myscript.sh
+ 
+7) Cron special keywords and its meaning
+	Keyword	Equivalent
+	@yearly	0 0 1 1 *
+	@daily	0 0 * * *
+	@hourly	0 * * * *
+	@reboot	Run at startup.
+	
+	a) To schedule a job for first minute of every year using @yearly
+		@yearly /home/maverick/bin/annual-maintenance
+	b) To schedule a Cron job beginning of every month using @monthly
+		@monthly /home/maverick/bin/tape-backup
+	c) To schedule a background job every day using @daily
+		@daily /home/maverick/bin/cleanup-logs "day started"
+	d) To execute a linux command after every reboot using @reboot
+		@reboot CMD
