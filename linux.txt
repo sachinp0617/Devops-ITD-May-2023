@@ -379,3 +379,29 @@ nohup
    - Sometime job or command takes a long time. If you are not sure when the job will finish, then it is better to leave job running in 	background. But, if you log out of the system, the job will be stopped and terminated by your shell.
    - use nohup command which allows to run command/process or shell script that can continue running in the background after you log out 	from a shell:
 		nohup <command> &
+
+uname	
+	uname command displays important information about the system such as — Kernel name, Host name, Kernel release number, Processor type, etc.,
+
+To check the linux version 
+	cat /etc/os-release (or) lsb_release -a
+
+whereis	or which 
+When you want to find out where a specific Unix command exists (for example, where does ls command exists?), you can execute the following command.
+
+whatis	
+Whatis command displays a single line description about a command.
+
+who	
+who command is used to find out the following information:
+	1. Time of last system boot
+	2. Current run level of the system
+	3. List of logged in users and more.
+
+	a) To display all details of current logged in user:	who -a
+	b) To display current run level of the system:		who -r
+	c) To show time of the system when it booted last time:	who -b -H
+	d) To show list of users logged in to system:		who -u
+
+whoami	
+To display system’s username
