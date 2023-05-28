@@ -323,3 +323,59 @@ example
 		@daily /home/maverick/bin/cleanup-logs "day started"
 	d) To execute a linux command after every reboot using @reboot
 		@reboot CMD
+
+
+free
+Free command used to check the used and available space of physical memory and swap memory (ram memory) in KB. The free command displays:
+•	Total amount of free and used physical memory
+•	Total amount of swap memory in the system
+•	Buffers and caches used by the kernel
+
+top
+The top command also gives you a real-time update on how much of your swap space is being used.
+
+/proc/meminfo
+	cat /proc/meminfo will contain dynamic information about the kernel and the system.
+	
+du
+“du” (Disk Usage) is a standard Unix/Linux command, used to check the information of disk usage of files and directories on a machine.
+1) Using “-h” option with “du” command provides results in “Human Readable Format“. Means you can see sizes in Bytes, Kilobytes, Megabytes, Gigabytes etc.
+		du -h
+
+df
+The command df stands for "disk filesystem". With the -h option (df -h) it shows the disk space in "human readable" form
+
+ps
+ps command is used to display information about the processes that are running in the system.
+1) To view current running processes.
+	ps -ef	
+kill
+Use kill command to terminate a process. First get the process id using ps -ef command, then use kill -9 to kill the running Linux process as shown below. 
+STEP1: Before kill first get the pid (process id to kill)
+	ps -ef | grep process_name
+	
+	OUTPUT:
+		user 7243 7222 9 22:43 pts/2 00:00:00 process
+
+STEP2: To kill the above process (use the pid from the second column)
+	kill -9 7243
+	
+	
+bg
+   - bg sends the specified jobs to the background.
+   - Also we can '&' at the end of any command to send it to background 
+
+jobs 
+   To list all the process running background 	
+   
+fg 
+     Bring a background process to the foreground
+     STE1: jobs
+     STEP2: use the array/sequence number of background job to bring to foreground 
+     		fg <job_number>
+
+nohup
+   - Most of the time your login into remote server via ssh. If you start a shell script or command and you exit (abort remote connection), 	 the process / command will get killed. 
+   - Sometime job or command takes a long time. If you are not sure when the job will finish, then it is better to leave job running in 	background. But, if you log out of the system, the job will be stopped and terminated by your shell.
+   - use nohup command which allows to run command/process or shell script that can continue running in the background after you log out 	from a shell:
+		nohup <command> &
