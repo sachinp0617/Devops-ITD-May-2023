@@ -405,3 +405,40 @@ who command is used to find out the following information:
 
 whoami	
 To display system’s username
+
+root
+- Root is the superuser account in Unix and Linux which is created automatically at the time of OS installation.
+- The root user has complete and unrestricted access to the system, including the ability to modify or delete any file or directory, and to start or stop any service.
+- It is a user account for administrative purposes, and has the highest access rights on the system.
+- The default user ID of root user is 0 (Zero)
+
+sudo 
+The sudo command lets us run commands with root privileges
+	sudo <command>
+	
+su (switch user)
+su command allows us to switch to a different user from current logged in user.
+1) To switch the logged-in user to another user 	
+	su -l <username>
+
+2) Command to switch to root suer 
+	sudo su -l root 
+	      (or)	
+	sudo su -
+
+echo 
+The echo command is a built-in command in most Unix-like operating systems, including Linux and macOS. It is used to display text to the standard output or console or in the terminal.
+	echo <text_line to display>
+	example: echo "My name is Manoj ......" 
+
+Bash scripting 
+Variables 
+- A bash variable is a temporary storage location for a value. 
+- Variables can be used to store any type of data, including strings, numbers, and lists. 
+
+1) Setting a value for a variable.
+	variable_name=value
+	
+2) Reading the value for a variable.
+	For referring to or reading a variable we place a $ sign before the variable name.
+		echo "$variable_name"	
