@@ -442,3 +442,11 @@ Variables
 2) Reading the value for a variable.
 	For referring to or reading a variable we place a $ sign before the variable name.
 		echo "$variable_name"	
+
+#) How to store a command output in a variable 
+	1) By using the acute or backtick or left quote (`)
+		famously known as backtick
+		variable=`<any_command>` 
+	2) By using shell executor method 
+		variable=$(<any_command>) 
+				
