@@ -48,6 +48,7 @@ rename or move the file from one location to another (mv)
 	To move to a different location (cut and paste)	
 		mv <source> <destination>
 	
+	
 Delete files/directories (rm)
 
 Use the rm command to delete files and directories. But rm cannot simply delete a directory. Use “rm -r” to delete a directory. In this case, it deletes both the folder and the files in it.
@@ -450,3 +451,70 @@ Variables
 	2) By using shell executor method 
 		variable=$(<any_command>) 
 				
+
+
+Write to a File using the Redirection Operator (>)
+	
+	- Redirection allows you to capture the output from a command and overwrite it as input to another command or file.
+	- It will overwrite/Erase all the content of file and add the new content to file.
+	- What ever the content it will written to file and nothing will be printe in console. 
+
+		echo "This is Redirection of text to file" > file.txt
+
+		To write to a file and also to print the written content in console/terminal 
+			 echo "This is Redirection of text to file" | Tee file.txt
+
+Append to a File using the double Redirection Operator (>>)
+	
+	- Double Redirection allows you to capture the output from a command and send it as input to another command or file.
+	- It will append the content to the end of file by keeping the old content.
+
+		echo "This is Redirection of text to file" >> file.txt
+
+		To append to a file and also to print the written content in console/terminal 
+			 echo "This is Redirection of text to file" | Tee -a file.txt
+			 							(OR)
+			 echo "This is Redirection of text to file" | Tee --append file.txt
+
+Single quote ('') vs Double quote ("")
+	
+	var=10
+
+	('') 
+		- Consideres all inside single quotes as String 
+		- The $var variable output does not get replaced with the variable value, but displays the variable name within the quotes, i.e., its literal form.
+
+		>$  echo '$var'
+		output:	$var
+
+	("") 
+		- Looks for assigned values to variable and executes the content. 
+		- Running the echo command with double quotes expands the $var variable and outputs the assigned value instead of printing the characters within the quotes.
+
+		>$  echo "$var"
+		output:	10	
+
+Escape character 
+
+	\ 
+		- A non-quoted backslash ‘\’ is the Bash escape character. 
+		- It preserves the literal value of the next character that follows and makes it as string only. 
+
+		Below only the charecter $ will be escaped and treated as string 
+			>$  echo "\$var"
+			output:	$var	
+
+		- If a \n pair appears, and the backslash itself is not quoted, a newline will be addedd. 
+
+			echo -e "\nThis is to add newline before this echo"
+
+			Multiple newlines 
+			echo -e "\nThis is \n to add newline \n before this echo\n"
+
+
+Copy the file from one location to another (cp)
+	- cp command copies files and directory through the command line. 
+
+	To copy to a different location
+		cp <source> <destination>	
+
