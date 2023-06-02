@@ -518,3 +518,42 @@ Copy the file from one location to another (cp)
 	To copy to a different location
 		cp <source> <destination>	
 
+
+scp (Secure and Normal copy between servers)
+- Used copy files and directory between the machines and also we can use it to copy with in the linux machine like cp.
+- It uses the same authentication and security configurations as SSH command.
+- If the copy process using SCP is interrupted or terminated before completion, running SCP again will start the copy process from the beginning. SCP does not have the ability to resume the transfer or transfer only the remaining parts of the file. It performs a plain linear copy, either locally or over a network.
+- Encrypt data by default, Slower for large transfers and more secure.
+
+	1. From Local machine to Remote host/machine
+		a. To copy file from local machine (from where we are running scp command to remote linux)
+	  		scp <local_normal_path>  <username>@<ip_address>:<remote_file_path>
+	  
+		b. To copy Directory from local machine (from where we are running scp command to remote linux)
+	  		scp -r <local_normal_path>  <username>@<ip_address>:<remote_file_path>  
+	2. From Remote host/machine to Local machine.  
+		a. To copy file from Remote machine to local
+	  		scp <username>@<ip_address>:<remote_file_path> <local_normal_path> 
+	  
+		b. To copy Directory from local machine (from where we are running scp command to remote linux)
+	  		scp -r <username>@<ip_address>:<remote_file_path> <local_normal_path>    
+			
+	example: 
+	  	1. Local to Remote
+			FILE: scp -i 'aws.pem' ./test.txt ubuntu@45.86.114.52:/home/ubuntu/test.text
+			Directory: scp -r -i 'aws.pem' ./test ubuntu@45.86.114.52:/home/ubuntu/
+			
+		2. Remote to Local
+			FILE: scp -i 'aws.pem' ubuntu@45.86.114.52:/home/ubuntu/test.text ./test.txt 
+			Directory: scp -r -i 'aws.pem' ubuntu@45.86.114.52:/home/ubuntu/test . 	
+			
+rsync (Compare and copy files)
+- Used copy files and directory between the machines and also we can use it to copy with in the linux machine like cp and scp.
+- rsync performs a more sophisticated comparison between the source and destination files. It checks not only the file sizes but also the modification timestamps and other attributes of the files.
+- If the copy process using rsync is interrupted or terminated before completion, running rsync again will start the copy process for remaining file as it compares the source and destinations files, Directories.
+- Does not encrypt data by default, Faster for large transfers and less secure compared to scp
+			
+	FILE: rsync -e 'ssh -i aws.pem' <local_normal_path>  <username>@<ip_address>:<remote_file_path>
+	Directory: rsync -r -e 'ssh -i aws.pem' <local_normal_path>  <username>@<ip_address>:<remote_file_path>
+	
+	
