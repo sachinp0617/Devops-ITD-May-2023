@@ -555,5 +555,45 @@ rsync (Compare and copy files)
 			
 	FILE: rsync -e 'ssh -i aws.pem' <local_normal_path>  <username>@<ip_address>:<remote_file_path>
 	Directory: rsync -r -e 'ssh -i aws.pem' <local_normal_path>  <username>@<ip_address>:<remote_file_path>
+		
+Environment variables
+- Environment variables are named values stored in the operating system's environment
+- Its preffered to use the Uppercase for Environment variable name.
+- The scope of the Environment variables is OS level. Like they are system-wide or can be a user-specific varibale.
+
+  To list all the Environment variables
+  	env
 	
-	
+  To create a environment variable in Linux 
+  	export <VARIABLE_NAME>=<VALUE>
+	example: export TEST='any value'
+  
+  To create a environment variable in Windows (Optional)
+  	1. Use use UI to create
+	2. Through powershell / cmd
+  	set <VARIABLE_NAME>=<VALUE>
+	example: set TEST='any value'
+
+Some important environment variable 
+1. PATH 
+   - The PATH variable specifies the directories where the system looks for executable files/commands. 
+   - The directories list are separated by colons (:) 
+   - It allows us to run commands without specifying the full path to the executable. 
+   - The commands that we try run in terminal it will search in a path from start to end of path list of this variable.
+  
+   For example: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+   
+   To update/add a path to $PATH
+   	export PATH="${PATH}:/home/ubuntu"
+2. HOME
+   - The HOME variable points to the current user's home directory. 
+   - In Linux - /home/<username>, where in EC2 (ubuntu) by default '/home/ubuntu'.	
+3. SHELL 
+   - The SHELL variable specifies the default shell for the user. 
+   - It contains the path to the user's default shell executable, such as /bin/bash or /bin/sh.
+4. PWD
+   - The present working directory path 
+5. USER
+   - The USER variable stores the <username> of the currently logged-in user.   
+6. LANG
+   - The LANG variable defines the default language and locale settings for the user interface and applications.   
