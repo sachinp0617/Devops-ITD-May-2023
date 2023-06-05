@@ -597,3 +597,15 @@ Some important environment variable
    - The USER variable stores the <username> of the currently logged-in user.   
 6. LANG
    - The LANG variable defines the default language and locale settings for the user interface and applications.   
+
+wc (word count)
+
+It is used to find out number of lines, word count, byte and characters count.
+	To count number of lines in a file 
+		cat file.txt | wc -l 
+	To count number of words in a file 
+		cat file.txt | wc -w
+	To count number of characters in a file 
+		cat file.txt | wc -c	
+
+
