@@ -1,4 +1,18 @@
 
+Remote Repository:
+  - A remote repository is a Git repository hosted on a remote server or a code hosting platform like GitHub, GitLab, or Bitbucket.
+  - It acts as a centralized location for collaborating changes from multiple developers, where multiple developers can push and pull     changes to keep the repository in sync.
+  - We can not do any changes directly to remote repository and a valid user with proper access can push changes to remote repo from only local repo.
+
+Local Repository:
+  - A local repository is a copy of a Git repository that resides on your local machine.
+  - It contains the complete copy of the repo repository, including all branches, commits, and files etc.
+  - The local repository allows you to make changes, commit them, switch between branches, and perform Git operations without needing a live network connection to remote repo.
+  - You can create a local repository by initializing a new repository with git init or cloning an existing repository using git clone.
+  
+  #To get a local repo / to download / clone a remote repo 
+      git clone <url_of_the_remote_repository>
+
 git status 
   - The git status is used to display the current status of your Git repository.
   - shows information about which files have been modified, which files are staged for the next commit, and which files are untracked.
