@@ -1,0 +1,41 @@
+
+git status 
+  - The git status is used to display the current status of your Git repository.
+  - shows information about which files have been modified, which files are staged for the next commit, and which files are untracked.
+
+git log 
+  - git log is used to view all commits history of a Git repository.
+  - It displays list of commits starting from the most recent commit on top.
+  - The commit history provides essential information about the changes made to the repository such as, 
+      commit messages, authors, dates, and unique identifiers (commit hash/id).
+
+git add 
+  - Adds changes to the staging area. 
+  - This is where you can review your changes before committing them to your local repository.
+  # Add all changes to the staging area
+    git add .   (OR)   git add --all
+    
+    git add -A is equivalent to git add --all
+    git add -u is equivalent to git add --update
+    
+    NOTE: Extra information just in case if you want to try but not required
+    Command	        New-Files	    Modified-Files	Deleted-Files	        Description
+      git add -A	     YES	            YES	          YES	                Stage all (new, modified, deleted) files
+      git add .	       YES	            YES	          YES	                Stage all (new, modified, deleted) files in current folder
+      git add -u	      NO	            YES	          YES	                Stage modified and deleted files only
+        
+git commit 
+  - Create a new commit containing the current changes of the stagging area (added files and directories)
+  - We need to give a commit message which we can see in the git log message describing the changes.
+  
+  # Commit the changes with a message
+      git commit -m "Added new feature"
+      
+git push 
+  - git push is a command used to push your local commited changes (after git add and git commit) to a remote repository.
+  - When you make changes to your local repository and want to share them with others or synchronize them with a remote repository 
+    (such as on GitHub, GitLab, or Bitbucket), you use git push to send those changes to the remote repository.
+  
+git pull 
+  - git pull is a command used to fetch and merge changes from a remote repository into your local repository.
+  - When others pushed changes to the remote repository, you can use git pull to update your local repository to get new commits from remopte repository.
