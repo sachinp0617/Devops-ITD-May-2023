@@ -608,4 +608,65 @@ It is used to find out number of lines, word count, byte and characters count.
 	To count number of characters in a file 
 		cat file.txt | wc -c	
 
+systemctl
+    - systemctl is used to examine and control the state of “systemd” system and service manager. 
+    - systemd is a system and service manager for Unix-like operating systems (most of the Linux distributions)
+    # TO check the status of service (Active, exited .....) 		
+	sudo systemctl status <service_name>	
+ 
+    # TO start the service 
+	sudo systemctl start <service_name>	
+    
+    # TO stop the service 
+	sudo systemctl stop <service_name>	
+	
+    # TO restart the service 
+	sudo systemctl restart <service_name>	
+	
+    # TO disable the service 
+	sudo systemctl disable <service_name>	
+    
+    # TO enable the service 
+	sudo systemctl enable <service_name>	
+	
+    # TO reload the service configuration 
+	sudo systemctl reload <service_name>	
 
+    # TO reload systemd manager configuration
+	sudo systemctl daemon-reload <service_name>	
+
+lsof 
+    - display information about files, ports and processes that are currently open by the system.
+
+    # List all open files: lsof 
+    	- display a list of all files that are currently open by any process on the system.
+    # List open files for a specific process: lsof -p <pid>
+    	- display all files opened by that particular process.
+    # List open files for a specific user: lsof -u <username>
+    	- display all files opened by processes owned by that user (by <username>).
+    # List open files for a specific directory: lsof <directory_path>
+    	- display all files opened within that directory or any of its subdirectories.
+	
+To check the port open or not 
+   List all busy ports in linux
+       1. sudo lsof -i -P -n | grep LISTEN
+       2. sudo netstat -tulpn | grep LISTEN
+       
+   To check a specific port ope or not  
+   	sudo lsof -i:<port_number>
+	example: sudo lsof -i:8080
+	
+curl (connect url)
+	curl command is widely used for testing and interacting with various network services, wedsites and APIs. 
+
+Here is a commonly used example of the curl command in the DevOps field:
+    1. Make an HTTP GET request and display the response like (html, json):
+	 curl <url>
+	 where: url: is dns (website address / ip address)
+	 
+    2. call the url and save the response to a file
+	 curl -o <output_file> <url>
+    
+    3. Make an HTTP POST request with data like (username, password, data to send to api)
+	 curl -H 'header: value' <url>
+		
