@@ -53,3 +53,21 @@ git push
 git pull 
   - git pull is a command used to fetch and merge changes from a remote repository into your local repository.
   - When others pushed changes to the remote repository, you can use git pull to update your local repository to get new commits from remopte repository.
+
+git merge vs rebase 
+
+Both git merge and rebase are used to combines the changes from one branch into another branch but different approaches to integrating changes from one branch into another in Git
+
+merge 
+   - Merge creates a new commit which shows the changes combined from both branches. 
+   - Merge preserves the history of both branches, so you can see which changes came from which branch.
+   - Merge can sometimes create merge conflicts, we need to discuss with the developers and solve the merge conflicts to complete the merge.
+     (usually merge conflicts occurs if 2 different users try the chagne the same lines in the same file and if we try to merge it)
+   
+rebase 
+   - Rebase do not creates a new commit that combines the changes from both branches. 
+   - Rebase rewrites the history of the first branch, it will bring all the commits from source branch and place it to the tip of 
+     the destination branch. (Commit history usually will become a linear and cleaner tree)
+   - Rebases do not create merge conflicts, but they can make it difficult to track the history of your repository.  
+   
+   
