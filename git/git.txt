@@ -70,4 +70,19 @@ rebase
      the destination branch. (Commit history usually will become a linear and cleaner tree)
    - Rebases do not create merge conflicts, but they can make it difficult to track the history of your repository.  
    
-   
+git fetch vs pull
+
+git fetch and git pull are both used to update local repository changes from remote repository.
+
+git fetch 
+  - Brings the changes from a remote repository into your local repository.
+  - Does not automatically merge the changes into your current branch in local repository.
+  - Instead it keeps changes in a temporary branch called FETCH_HEAD and we can inspect the changes then decide how you want to integrate       them into our local work in local repository.
+
+git pull
+  - git pull, combines the functionality of git fetch and git merge in a single step.
+  - It fetches the latest changes from the remote repository and automatically merges them into the current local branch. 
+  - It updates the remote-tracking branches with local branch and incorporates the changes into your local branch.
+  - It performs an automatic merge, which means if there are conflicts, we will need to resolve them.
+    
+    
