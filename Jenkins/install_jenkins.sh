@@ -1,6 +1,7 @@
 #!/bin/bash
-sudo apt update -y 
-
+echo "Initial update"
+    sudo apt update -y
+    
 echo "STEP1: Install JDK-11"
     sudo apt install openjdk-11-jdk -y
 
