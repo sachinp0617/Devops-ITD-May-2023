@@ -18,6 +18,11 @@ pipeline {
            steps {
                 sh 'sleep 5'
            }
-       }    
+       }  
+       stage ('DEPLOY1') {
+           steps {
+                sh 'sleep 5'
+           }
+       }     
     }
 }
