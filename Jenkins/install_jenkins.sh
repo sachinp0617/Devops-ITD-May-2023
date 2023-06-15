@@ -14,5 +14,10 @@ echo "STEP3: Add jenkins package to apt "
 echo "STEP4: Update apt again"
     sudo apt update -y 
 
+
+
 echo "STEP5: Final install the Jenkins"
     sudo apt-get install jenkins -y
+
+
+

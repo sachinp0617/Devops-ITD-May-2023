@@ -1,0 +1,37 @@
+Jenkins Pipeline 
+    How to create a jenkins pipeline job ?
+	1. We can add pipeline configuration in 2 ways 
+		a. We write all the configuration inside the pipeline job in job ui only.
+		b. We can write all the configuration in a file called Jenkinsfile and we can add that 
+		   from a SCM/Version control 
+	2. We are using only declarative pipeline type in our company.
+
+
+    What are the ways to create a jenkins Job ?  
+    What is a Jenkinsfile ?
+
+    Jenkinsfile	
+	- It is the file in which we write all our job configuration in groovy.
+	- In our company we are using declarative pipeline in Jenkinsfile and we are maintaining 
+	  Jenkinsfile through git.	
+
+    Types of pipeline jobs 
+	Jenkins pipeline uses Groovy scripting which 
+	is one of the java based scripting language. 
+	
+	2 types of pipeline job 
+	    1. Scripted pipeline 
+		- Traditional way of defining pipeline Job 
+ 		- Most of the configuration we need to define manually. 
+		- All the code will be inside node block.
+			node {
+				......
+			}
+	
+ 	    2. Declarative Pipeline  	
+		- New way of defining pipeline job.
+		- Most of the configuration are pre-defined.					 			   
+		- All the code will be inside pipeline block.
+			pipeline {
+				......
+			}
