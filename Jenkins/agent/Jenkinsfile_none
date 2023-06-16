@@ -1,0 +1,25 @@
+pipeline {
+    agent any 
+    stages {
+        stage('BUILD') {  
+            agent any
+            steps {
+                sh 'sleep 5'
+            }    
+        } 
+
+        stage('TEST1') {
+            agent { label 'slave1' } 
+            steps {
+                sh 'sleep 5'
+            }    
+        }
+
+        stage('DELOPY') {
+            agent { label 'slave2' } 
+            steps {
+                sh 'sleep 5'
+            }    
+        }
+    }
+}
