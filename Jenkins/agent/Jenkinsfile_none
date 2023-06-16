@@ -3,6 +3,7 @@ pipeline {
     
     environment {
         DELOPY_TO = 'production'
+        ACTION = 'deploy'
     }
 
     stages {
@@ -21,8 +22,7 @@ pipeline {
         stage('TEST1') {
             agent { label 'slave1' } 
             steps {
-                echo "${DELOPY_TO}"
-                echo "$BUILD_STAGE"
+                echo "${env.DELOPY_TO}"
             }    
         }
     }
