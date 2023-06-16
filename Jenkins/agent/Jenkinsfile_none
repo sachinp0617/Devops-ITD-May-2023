@@ -10,10 +10,10 @@ pipeline {
         stage('BUILD') {
             agent any  
 
-            environment {
-                BUILD_STAGE = 'yes'
+            script {
+                env.DELOPY_TO = 'new_production'
             }
-
+        
             steps {
                 sh 'sleep 5'
             }    
