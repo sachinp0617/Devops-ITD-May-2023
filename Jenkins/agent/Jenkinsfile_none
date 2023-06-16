@@ -11,7 +11,7 @@ pipeline {
             agent any  
             steps {
                 script {
-                    env.DELOPY_TO = 'new_production'
+                    DELOPY_TO = 'new_production'
                 }
                 sh 'sleep 5'
             }    
