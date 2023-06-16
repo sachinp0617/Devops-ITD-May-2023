@@ -1,27 +1,41 @@
+boolean stageResult = true 
+
 pipeline {
-    agent none 
-    
-    environment {
-        DELOPY_TO = 'production'
-        ACTION = 'deploy'
-    }
+    agent any 
 
     stages {
-        stage('BUILD') {
-            agent any  
+        stage('STAGE1') { 
             steps {
                 script {
-                    DELOPY_TO = 'new_production'
+                    try {
+                        echo "This is STAGE1 execution"
+                        sh 'sleep 5'
+                    } catch (Exception e) {
+                        echo "STAGE1 FAILED"
+                        stageResult = false 
+                    }
                 }
-                sh 'sleep 5'
             }    
         } 
 
-        stage('TEST1') {
-            agent { label 'slave1' } 
+        stage('STAGE2') {
             steps {
-                echo "${env.DELOPY_TO}"
+                script {
+                    if (stageResult == true) {
+                        echo "STAGE1 is sccuess so Executing STAGE2"
+                    }
+                }
             }    
+        }
+
+        stage('STAGE3') {
+            steps {
+                script {
+                    if (stageResult == false) {
+                        echo "STAGE1 failed so Executing STAGE3"
+                    }
+                }
+            }      
         }
     }
 }
