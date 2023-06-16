@@ -1,8 +1,18 @@
 pipeline {
     agent none 
+    
+    environment {
+        DELOPY_TO = 'production'
+    }
+
     stages {
         stage('BUILD') {
             agent any  
+
+            environment {
+                BUILD_STAGE = 'yes'
+            }
+
             steps {
                 sh 'sleep 5'
             }    
@@ -11,14 +21,8 @@ pipeline {
         stage('TEST1') {
             agent { label 'slave1' } 
             steps {
-                sh 'sleep 5'
-            }    
-        }
-
-        stage('DELOPY') {
-            agent { label 'slave2' } 
-            steps {
-                sh 'sleep 5'
+                echo "${DELOPY_TO}"
+                echo "$BUILD_STAGE"
             }    
         }
     }
