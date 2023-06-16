@@ -9,12 +9,10 @@ pipeline {
     stages {
         stage('BUILD') {
             agent any  
-
-            script {
-                env.DELOPY_TO = 'new_production'
-            }
-        
             steps {
+                script {
+                    env.DELOPY_TO = 'new_production'
+                }
                 sh 'sleep 5'
             }    
         } 
