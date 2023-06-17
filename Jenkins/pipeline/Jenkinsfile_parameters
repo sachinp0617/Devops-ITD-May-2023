@@ -1,5 +1,10 @@
 pipeline {
 	agent any  
+
+    parameters {
+        choice(name: 'DEPLOY', choices: ['test','qa','prod'], description: 'Enter the environment to Deploy ....')
+    }
+
 	stages {
 		stage('BUILD') {
 			steps {
@@ -8,7 +13,7 @@ pipeline {
                     if(ENVIRONMENT == 'test') {
                         echo "Deploying to TEST ....."
                     } else if(ENVIRONMENT == 'qa') {
-                        echo "Deploying to TEST ....."
+                        echo "Deploying to QA ....."
                     }
                 }
 			}	
