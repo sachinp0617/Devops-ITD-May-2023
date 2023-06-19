@@ -9,7 +9,7 @@ pipeline {
         sh '''
         	cd ./maven/sparkjava-war 
         	mvn clean package
-        	cd ./maven/sparkjava-war/target/
+        	cd ./target/
         	ls
            '''
       }
