@@ -7,7 +7,7 @@ pipeline {
     stage ('Build') {
       steps {
         sh '''
-        	cd ./maven/sparkjava-war 
+        	cd ./maven/simple-war 
         	mvn clean package
         	cd ./target/
         	ls
@@ -17,7 +17,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         script {
-          deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', url: 'http://65.2.40.144:8080/')], contextPath: '/itdefined-war-1.0.0', onFailure: false, war: 'maven/sparkjava-war/target/itdefined-war-1.0.0.war' 
+          deploy adapters: [tomcat10(credentialsId: 'tomcat_manager', path: '', url: 'http://65.2.40.144:8080/')], contextPath: '/itdefined-war-1.0.0', onFailure: false, war: 'maven/sparkjava-war/target/itdefined-war-1.0.0.war' 
         }
       }
     }
