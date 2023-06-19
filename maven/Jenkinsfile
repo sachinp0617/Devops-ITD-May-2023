@@ -9,13 +9,15 @@ pipeline {
         sh '''
         	cd ./maven/sparkjava-war 
         	mvn clean package
+        	cd ./maven/sparkjava-war/target/
+        	ls
            '''
       }
     }
     stage ('Deploy') {
       steps {
         script {
-          deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', url: 'http://65.2.40.144:8080/')], contextPath: '/pipeline', onFailure: false, war: 'webapp/target/*.war' 
+          deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', url: 'http://65.2.40.144:8080/')], contextPath: '/javaWebApp', onFailure: false, war: 'target/*.war' 
         }
       }
     }
