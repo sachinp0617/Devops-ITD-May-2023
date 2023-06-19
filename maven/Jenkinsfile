@@ -8,7 +8,7 @@ pipeline {
       steps {
         sh '''
         	cd ./maven/simple-war 
-        	mvn clean package
+        	mvn versions:set -DnewVersion=${BUILD_NUMBER}-SNAPSHOT clean package
         	cd ./target/
         	ls
            '''
