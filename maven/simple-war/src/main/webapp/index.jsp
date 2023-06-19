@@ -3,7 +3,7 @@
 <title>itdefined.org!</title>
 </head>
 <body>
-	<h1>IT Defined new update</h1>
+	<h1>IT Defined new update test</h1>
 	<p>
 		It is now
 		<%= new java.util.Date() %></p>
