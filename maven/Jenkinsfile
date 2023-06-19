@@ -17,7 +17,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         script {
-          deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', url: 'http://65.2.40.144:8080/')], contextPath: '/javaWebApp', onFailure: false, war: 'maven/sparkjava-war/target/*.war' 
+          deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', url: 'http://65.2.40.144:8080/')], contextPath: '/sparkjava-hello-world-1.0', onFailure: false, war: 'maven/sparkjava-war/target/*.war' 
         }
       }
     }
