@@ -3,7 +3,7 @@
 <title>itdefined.org!</title>
 </head>
 <body>
-	<h1>IT Defined new update webhook test</h1>
+	<h1>IT Defined</h1>
 	<p>
 		It is now
 		<%= new java.util.Date() %></p>
