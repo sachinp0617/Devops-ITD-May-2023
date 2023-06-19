@@ -6,7 +6,10 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        sh 'pwd; ls; mvn clean package'
+        sh '''
+        	cd ./maven/sparkjava-war 
+        	mvn clean package
+           '''
       }
     }
     stage ('Deploy') {
