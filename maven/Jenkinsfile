@@ -4,6 +4,12 @@ pipeline {
     maven 'maven-3.9.2' 
   }
   stages {
+    stage('CleanWorkspace') {
+        steps {
+          cleanWs()
+        }
+    }
+
     stage ('Build') {
       steps {
         sh '''
