@@ -73,3 +73,15 @@ It can contain one or many of the following conditional blocks – always, chang
 		unstable – build is successful but not healthy. 
 		    E.g. On a particular build run, test cases ran successfully, but test coverage % is less than expected, 
 				 then the build can be marked as unstable	      
+
+To change the default port of Jenkins (8080)
+	- In debian (ubuntu): /etc/default/jenkins
+	- In RHEL/CentOS: /etc/sysconfig/jenkins
+	
+	change HTTP_PORT=8080 value to your preffered port number 
+	Then restart the jenkins service
+
+Assignment - Make jenkins user a sudo user (root privilages)
+		sudo visudo 
+		
+	
