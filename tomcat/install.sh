@@ -50,7 +50,7 @@ echo "STEP2: Configure administrator and manager user account for Apache Tomcat.
 	'
 	echo '
 		<role rolename="manager-gui" />
-		<user username="manager" password="StrongPassword" roles="manager-gui" />
+		<user username="manager" password="StrongPassword" roles="manager-gui,manager-script" />
 
 		<role rolename="admin-gui" />
 		<user username="admin" password="StrongPassword" roles="manager-gui,admin-gui" />
@@ -77,6 +77,7 @@ echo "STEP4: Reload the systemd daemon, Start Apache Tomcat service and Enable t
 echo '
 sudo systemctl daemon-reload
 sudo systemctl enable tomcat
+sudo systemctl start tomcat
 sudo systemctl status tomcat
 '
 
