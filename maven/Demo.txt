@@ -5,6 +5,8 @@
        - Folow the instructions from the script 
             - STEP2 (add manager user to tomcat), STEP3 - (Allow all IP access to tomcat) and STEP4 - (Reload and start Tomcat)
 
+    ACCESS_TOMCAT: http://<ip_address>:8080
+    
 2. Setup CI/CD in Jenkins (Declarative pipeline)
    a. use tomcat/Jenkinsfile or maven/Jenkinsfile
    
