@@ -73,5 +73,51 @@ Container creation (docker run)
 
 docker inspect 	
 
+Docker images 
+	Custom image 
+		- We use Dockerfile to create custom images by using a base image or stock image or other image 
+		- 
+
+	FROM
+	
+	RUN
+
+	COPY and ADD
+
+	ENV
+
+	ARG
+
+	WORKDIR 
+
+	CMD and ENTRYPOINT
+
+Assignment: 
+	MAINTAINER 
+	How to override Entrypoint command?
+
+
+Docker Volume 
+	Bind mount 
+
+
+docker volume create --driver local --opt type=nfs --opt o=addr=172.31.46.125,rw,nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 --opt device=:/ efs		
+
+
+Docker Networking 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
