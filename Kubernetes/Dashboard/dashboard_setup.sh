@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ "$1" == 'install' ]]; then 
-    kubectl apply -f https://raw.githubusercontent.com/jaintpharsha/Devops-January-2023/main/kubernetes/Dashboard/kubernete-dashboard.yml
+    kubectl apply -f https://raw.githubusercontent.com/jaintpharsha/Devops-ITD-May-2023/main/Kubernetes/Dashboard/kubernete-dashboard.yml
 
     kubectl --namespace kubernetes-dashboard patch svc kubernetes-dashboard -p '{"spec": {"type": "NodePort"}}'
 
@@ -39,7 +39,7 @@ EOF
     echo -e "\n   USE BELLOW TOKEN TO LOGIN K8S_DASHBOARD\n"
     kubectl describe secret -n kubernetes-dashboard kubernetes-dashboard-token | grep -i 'token:      ' | awk -F 'token:      ' '{print $NF}'
 elif [[ "$1" == 'remove' ]]; then 
-    kubectl delete -f https://raw.githubusercontent.com/jaintpharsha/Devops-January-2023/main/kubernetes/Dashboard/kubernete-dashboard.yml
+    kubectl delete -f https://raw.githubusercontent.com/jaintpharsha/Devops-ITD-May-2023/main/Kubernetes/Dashboard/kubernete-dashboard.yml
     [[ -d "$HOME/certs" ]] && rm -rf "$HOME/certs"
 else 
     echo "Unknown option $1"
