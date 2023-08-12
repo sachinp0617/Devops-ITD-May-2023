@@ -4,17 +4,17 @@ import socket, json
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def print_ip():
     hostname = socket.gethostname()
     get_ip = socket.gethostbyname(hostname)
     return get_ip
   
 @app.route('/health')
-def hello_world():
+def health_check():
     return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 @app.route('/name')
-def hello_world():
+def print_name():
     return 'Harsha Jain'
 
 if __name__ == '__main__':
