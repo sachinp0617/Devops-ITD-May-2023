@@ -1,16 +1,16 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: ip-app-deployment
+  name: ip-app-statefulset
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: ip-app
+      app: ip-app-sfs
   template:
     metadata:
       labels:
-        app: ip-app
+        app: ip-app-sfs
     spec:
       containers:
       - name: ipapp
