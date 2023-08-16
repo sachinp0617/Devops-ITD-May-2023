@@ -320,4 +320,45 @@ usage: we can apply environment-based logical separation on cluster.
         2. While apply     
             kubectl apply -f <spec_file>.yml -n <namespace_name>
 
-        Note: If we provide a namespace in both spec files and apply, apply command check and compare the namespace in the spec file if they are not the same k8s won't allow us to create the object.   
+        Note: If we provide a namespace in both spec files and apply, apply command check and compare the namespace in the spec file if they are not the same k8s won't allow us to create the object.
+
+Service (svc) (Basic network configurations in k8s)
+	- Service is a REST API object with which we can define policies to access the set of pods.
+	- Services are cluster-level objects.
+	- By default, services are load balancers.
+	- K8S Preferred port range for services is between 30000 - 32767.  
+	
+	ClusterIP
+		- This is the default type of service in k8S.
+		- using ClusterIP we can expose the IPs of pods to another set of pods within the cluster.
+
+		To check 
+			1. Create a custom image and push them to your Docker registry
+				docker build -t <username>/<repo_name>:<tag> .
+				docker login
+				docker push 
+			2. kubectl apply -f clusterIP.yml
+
+			3. login to any one pod
+					kubectl exec -it <pod_name> /bin/bash
+
+			4. Try to access the service - ClusterIP using <ClusterIP_ip_address>:<service_port>		 	
+				curl </ClusterIP_ip_address>:<service_port>
+				ex: (for i in {1..20}; do curl 10.101.209.36:30002; echo; done)
+
+	NodePort
+		- This service is the most primitive way to get the external traffic directed to our applications 
+		  running inside the cluster in pods.
+		- Automatically a ClusterIP will also be created internally.
+
+		NodePort = ClusterIP + a port mapping to all the nodes ips. 		
+
+		- If we won't specify any port while creating nodeport, k8s will Automatically assigns a random port 
+		  between 30000 - 32767
+    LoadBalancer:
+
+        - Service of type LoadBalancer provides external access to services within the cluster by automatically provisioning a load                   balancer provided by the cloud provider. 
+        - This type of service is often used to expose applications externally to the internet or other external networks (usualy with EKS 
+           and AKS).
+
+
