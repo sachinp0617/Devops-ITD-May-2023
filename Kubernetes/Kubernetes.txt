@@ -361,4 +361,22 @@ Service (svc) (Basic network configurations in k8s)
         - This type of service is often used to expose applications externally to the internet or other external networks (usualy with EKS 
            and AKS).
 
+     Headless service 
+	- If we don't need the default load balancing capability of services nor the single IP to service we use StatefullSet 
+	- using Headless service we can get all the target pod ips, if we do nslookup.
+	- It is created by specifying 'none' for ClusterIP
+	- Headless service is usually used with the StatefullSet controller.  
+
+
+	- Headless service returns all the ips of the pods it is selecting.
+	- headless service is created by specifying none for clusterIP 
+	- headless service is usually used with StatefullSet.
+	
+	Demo: 1. Create a headless service with StatefullSet
+	      2. log in to any one of the pod - kubectl exec -it <pod_name> <command>
+	      3. apt update && apt install dnsutils 
+	      4. nslookup <service_name>	
+StatefulSet
+	Like a Deployment, a StatefulSet manages Pods that is based on an identical container spec and can be used to create replicas of pods. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of its Pods replicas.
+
 
