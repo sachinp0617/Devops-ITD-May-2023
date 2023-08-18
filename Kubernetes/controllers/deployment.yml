@@ -11,9 +11,9 @@ spec:
     metadata:
       labels:
         app: ip-app
-    spec:
+    spec:      
       containers:
       - name: ipapp
-        image: harshajain/ip-app:latest
+        image: harshajain/ip-app:2
         ports:
         - containerPort: 8080
