@@ -380,3 +380,48 @@ StatefulSet
 	Like a Deployment, a StatefulSet manages Pods that is based on an identical container spec and can be used to create replicas of pods. Unlike a Deployment, a StatefulSet maintains a sticky identity for each of its Pods replicas.
 
 
+Pod assignment (How to create pods in chosen nodes / particular node)
+
+1. Node Selector
+	- Node selector is a way of creating / binding pod to a worker node based on the node label 
+	- We use node selector to redirect the pod create to a worker node.
+	- We can't use any logical expressions in selection. (only one label can be matched)	
+
+	Create a label on worker node 
+	      kubectl label node <node_name> <key>=<value>
+
+	Using node selector in pod 
+		spec:
+     		  nodeSelector:
+        	     <key>: <value>
+		  containers:
+		     ......
+
+  2. Node affinity and anti-affinity 
+		Node affinity 
+			- nodeSelector with logical expressions is affinity 
+			- using node affinity we can spread the pod schedule on worker nodes based on 
+					- cpacity (memory-intense mode)
+					- Availability zone (HA mode)
+
+			prefferedDuringSchedullingIgnoreDuringExecution - The scheduler tries to find a node matching the rules, if 
+			a matching node is not 	available then scheduler still schedules the pods in normal way.
+
+			requiredDuringSchedullingIgnoreDuringExecution - THe scheduler will not schedule the pod until 
+			the rules are matching.
+
+			IgnoreDuringExecution - If the node labels are changes after the scheduling of pods still the pods continues to run.
+			
+			spec:
+				affinity:
+					nodeAffinity:
+					requiredDuringSchedulingIgnoredDuringExecution:
+						nodeSelectorTerms:
+						- matchExpressions:
+						- key: topology.kubernetes.io/zone
+							operator: In
+							values:
+							- antarctica-east1
+							- antarctica-west1
+		
+		
