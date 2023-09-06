@@ -8,7 +8,7 @@ spec:
     image: harshajain/ip_app:2
     ports:
     - containerPort: 80
-    volumesMounts:
+    volumeMounts:
     - name: config-volume
       mountPath: '/app/volume/configmap'
     - name: secret-volume
