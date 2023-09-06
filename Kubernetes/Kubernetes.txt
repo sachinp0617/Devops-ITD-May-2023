@@ -688,3 +688,8 @@ Kubernetes Volumes
 			- PVs are bound to PVCs, ensuring that the requested storage is allocated to the pod.
 			- After we create pvc, k8s looks for a Persistent Volume which matches the claim with same configuration.
 			- If Persistent Volume is found with same configuration, it binds the claim to the pod as volume.
+
+	3. Dynamic storage
+
+	4. Configmap and secrets 
+					
