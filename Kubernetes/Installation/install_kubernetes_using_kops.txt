@@ -19,4 +19,7 @@ Kubernetes Installation using kops
 
 
 To delete cluster in kops 
-	kops delete cluster <cluster_name> --yes
+	1. List clusters 
+	   kops get clusters
+	2. Delete the required cluster 
+	   kops delete cluster <cluster_name> --yes
