@@ -3,9 +3,14 @@ kind: Job
 metadata:
     name: my-job
 spec:
+    completions: 5
     template:
       spec: 
         containers: 
         - name: busybox 
           image: busybox
-          command: ["echo", "JOBS"]
+          command: 
+          - /bin/sh
+          - -c 
+          - "sleep 15; echo JOBS"
+        restartPolicy: Never 

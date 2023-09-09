@@ -821,6 +821,7 @@ HPA and VPA
 
 	VPA - Vertical pod autoscaler
 
+JOBS
 
 restartPolicy: 
 	- This is pod filed 
@@ -834,3 +835,6 @@ restartPolicy:
 	  	 
 	  Never 
 	    	 
+common field 
+	completions 
+		- 
