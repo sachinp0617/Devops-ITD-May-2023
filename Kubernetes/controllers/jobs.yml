@@ -4,6 +4,7 @@ metadata:
     name: my-job
 spec:
     completions: 1
+    backoffLimit: 2
     template:
       spec: 
         containers: 
