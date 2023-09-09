@@ -9,4 +9,3 @@ spec:
         - name: busybox 
           image: busybox
           command: ["echo", "JOBS"]
-        restartPolicy: Never 
