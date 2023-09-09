@@ -5,6 +5,7 @@ metadata:
 spec:
     completions: 1
     backoffLimit: 2
+    activeDeadlineSecond: 5
     template:
       spec: 
         containers: 
@@ -13,5 +14,5 @@ spec:
           command: 
           - /bin/sh
           - -c 
-          - "sleep 2; exit 1"
+          - "sleep 20; exit 1"
         restartPolicy: Never 
