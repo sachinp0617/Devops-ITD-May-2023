@@ -18,4 +18,4 @@ spec:
         command: 
         - /bin/sh 
         - -c 
-        - "while true; do wget -q http://"
+        - "while true; do wget -q http://php-app-ci; done"
