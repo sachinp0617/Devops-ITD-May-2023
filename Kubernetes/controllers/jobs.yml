@@ -3,8 +3,7 @@ kind: Job
 metadata:
     name: my-job
 spec:
-    completions: 10
-    parallelism: 5
+    completions: 1
     template:
       spec: 
         containers: 
@@ -13,5 +12,5 @@ spec:
           command: 
           - /bin/sh
           - -c 
-          - "sleep 10; echo JOBS"
+          - "sleep 2; exit 1"
         restartPolicy: Never 

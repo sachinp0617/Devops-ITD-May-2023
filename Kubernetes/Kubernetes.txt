@@ -838,4 +838,5 @@ restartPolicy:
 common field 
 	completions 
 
-	parallel
+	parallelism
+	
