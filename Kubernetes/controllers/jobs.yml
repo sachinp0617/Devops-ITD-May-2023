@@ -5,7 +5,7 @@ metadata:
 spec:
     completions: 1
     backoffLimit: 2
-    activeDeadlineSecond: 5
+    activeDeadlineSeconds: 5
     template:
       spec: 
         containers: 
