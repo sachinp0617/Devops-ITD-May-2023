@@ -6,13 +6,15 @@ spec:
     schedule: "* * * * *"
     successfulJobsHistoryLimit: 5
     failedJobsHistoryLimit: 5
-    template:
-      spec: 
-        containers: 
-        - name: busybox 
-          image: busybox
-          command: 
-          - /bin/sh
-          - -c 
-          - "sleep 4"
-        restartPolicy: OnFailure 
+    jobTemplate: 
+        spec: 
+            template:
+              spec: 
+                containers: 
+                - name: busybox 
+                  image: busybox
+                  command: 
+                  - /bin/sh
+                  - -c 
+                  - "sleep 4"
+                restartPolicy: OnFailure 
