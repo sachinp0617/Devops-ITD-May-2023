@@ -15,4 +15,4 @@ spec:
           - /bin/sh
           - -c 
           - "sleep 4"
-        restartPolicy: OnFaliure 
+        restartPolicy: OnFailure 
