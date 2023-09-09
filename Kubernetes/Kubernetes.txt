@@ -840,3 +840,5 @@ common field
 	parallelism: 1
 	backoffLimit: 2
 	activeDeadlineSecond: 
+
+	schedule: (CronJob)
