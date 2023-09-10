@@ -789,3 +789,56 @@ ConfigMaps and Secrets
             		        secretKeyRef: 
                				name: my-secret
                				key: db_url
+
+HPA and VPA
+
+	HPA - Horizontal pod autoscaler
+    
+	1. Install metric server 
+		kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+	2. Add be command to metric-server deployment file 
+		kubectl edit deployment -n kube-system metrics-server
+	 command:
+        - /metrics-server
+        - --kubelet-insecure-tls
+        - --kubelet-preferred-address-types=InternalIP
+
+	kubectl top nodes 
+	kubectl top pods
+
+	Demo 
+	1. Php - application with ClusterIP service 
+		kubectl apply -f deployment-app.yml
+
+	2. Create a HPA 
+		kubectl apply -f HPA.yml
+		kubectl get hpa 
+
+	3. Put load on the application to see the HPA in action 
+	     kubectl apply -f load-deployment.yml
+
+
+	VPA - Vertical pod autoscaler
+
+JOBS
+
+restartPolicy: 
+	- This is pod filed 
+	- REstart policy types 
+
+	  Always 
+	  	- This is the default 
+		- Always restarts the containers if they are not running.
+
+	  OnFailure
+	  	 
+	  Never 
+	    	 
+common field 
+	completions: 1
+	parallelism: 1
+	backoffLimit: 2
+	activeDeadlineSecond: 
+
+	schedule: (CronJob)
