@@ -945,3 +945,7 @@ Common errors
 
 10 Most Common Reasons Kubernetes Deployments
 	https://www.kukulinski.com/10-most-common-reasons-kubernetes-deployments-fail-part-1/
+
+helm
+	- Helm uses default kubernetes config $HOME/.kube/config
+    
