@@ -13,4 +13,3 @@ output "ec2_private_ip_address" {
 output "ec2_security_groups_id" {
     value = aws_instance.my_instance.vpc_security_group_ids
 }
-
