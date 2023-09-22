@@ -353,3 +353,10 @@ data source / data resource
 	- A data source is used to get the information dynamically from cloud.
 	- This block is read-only and this will be always executed on every plan and apply.
 	- we can query the required information and filter the field we want.
+
+Terraform import  (Importing existing aws resource to terraform)
+	- we are using terraforming tool in our company to import the existing configurations. 
+	  Install terraforming in RHEL/Centos 
+		(https://github.com/dtan4/terraforming)		
+			sudo yum install rubygems
+			sudo gem install terraforming
