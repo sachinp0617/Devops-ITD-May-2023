@@ -37,3 +37,7 @@ variable "root_destination_path_copy_script" {
 variable "root_inline_script" {
     type = list 
 }
+
+variable "root_sg_name" {
+    type = string 
+}
