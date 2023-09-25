@@ -33,7 +33,6 @@ module "remote_exec_inline_command" {
     inline_commands = var.root_inline_commands
 }
 
-
 module "file_provisione_copy_script" {
     source = "./modules/file_provisioner"
     ec2_public_ip = module.create_ec2.ec2_public_ip_address
