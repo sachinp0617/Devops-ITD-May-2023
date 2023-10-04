@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx-example
   rules:
-  - host: app.example.com
+  - host: ingress.example.com
     http:
       paths:
       - path: /
@@ -16,7 +16,7 @@ spec:
           service:
             name: cip-ipapp
             port:
-              number: 8090
+              number: 8080
       - path: /name
         pathType: Prefix
         backend:
