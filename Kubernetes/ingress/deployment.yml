@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: ipapp
-        image: harshajain/ip_app:2
+        image: harshajain/ip_app:1
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 
 ---
 
@@ -30,4 +30,4 @@ spec:
     ports:
       - name: http
         port: 8090
-        targetPort: 8080
+        targetPort: 80
