@@ -16,7 +16,7 @@ spec:
           service:
             name: cip-ipapp
             port:
-              number: 8080
+              number: 8090
       - path: "/name"
         pathType: Prefix
         backend:
